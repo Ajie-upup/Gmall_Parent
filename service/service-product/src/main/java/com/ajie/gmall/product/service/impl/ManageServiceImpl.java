@@ -71,10 +71,18 @@ public class ManageServiceImpl implements ManageService {
         return baseCategory3Mapper.selectList(queryWrapper);
     }
 
+    /**
+     * 根据分类id查询平台属性
+     * @param category1Id
+     * @param category2Id
+     * @param category3Id
+     * @return
+     */
     @Override
     public List<BaseAttrInfo> attrInfoList(Long category1Id, Long category2Id, Long category3Id) {
 
-        return baseAttrInfoMapper.selectBaseAttrInfoList(category1Id, category2Id, category3Id);
+        //调用mapper查询
+        return  baseAttrInfoMapper.selectAttrInfoList(category1Id,category2Id,category3Id);
     }
 
     /**

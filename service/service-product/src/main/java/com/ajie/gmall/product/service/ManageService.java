@@ -4,6 +4,8 @@ import com.ajie.gmall.model.product.BaseAttrInfo;
 import com.ajie.gmall.model.product.BaseCategory1;
 import com.ajie.gmall.model.product.BaseCategory2;
 import com.ajie.gmall.model.product.BaseCategory3;
+import org.apache.ibatis.annotations.Param;
+
 
 import java.util.List;
 
@@ -37,7 +39,7 @@ public interface ManageService {
     List<BaseCategory3> getCategory3(Long category2Id);
 
     /**
-     * 根据分类查询平台属性
+     * 根据分类id查询平台属性
      *
      * @param category1Id
      * @param category2Id
@@ -48,12 +50,14 @@ public interface ManageService {
 
     /**
      * 新增和修改平台属性和平台属性值
+     *
      * @param baseAttrInfo
      */
     void saveAttrInfo(BaseAttrInfo baseAttrInfo);
 
     /**
      * 根据attrId 查询平台属性对象
+     *
      * @param attrId
      * @return
      */

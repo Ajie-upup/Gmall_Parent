@@ -60,6 +60,7 @@ public class BaseManageController {
 
     /**
      * 根据分类查询平台属性
+     * /admin/product/attrInfoList/{category1Id}/{category2Id}/{category3Id}
      *
      * @param category1Id
      * @param category2Id
@@ -67,11 +68,14 @@ public class BaseManageController {
      * @return
      */
     @GetMapping("/attrInfoList/{category1Id}/{category2Id}/{category3Id}")
-    public Result<List<BaseAttrInfo>> attrInfoList(@PathVariable("category1Id") Long category1Id,
-                                                   @PathVariable("category2Id") Long category2Id,
-                                                   @PathVariable("category3Id") Long category3Id) {
-        List<BaseAttrInfo> baseAttrInfoList = manageService.attrInfoList(category1Id, category2Id, category3Id);
-        return Result.ok(baseAttrInfoList);
+    public Result attrInfoList(@PathVariable Long category1Id,
+                               @PathVariable Long category2Id,
+                               @PathVariable Long category3Id) {
+        //调用service
+        List<BaseAttrInfo> list = manageService.attrInfoList(category1Id, category2Id, category3Id);
+
+        return Result.ok(list);
+
     }
 
     /**
