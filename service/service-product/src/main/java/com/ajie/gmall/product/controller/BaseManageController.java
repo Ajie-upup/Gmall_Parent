@@ -2,7 +2,6 @@ package com.ajie.gmall.product.controller;
 
 import com.ajie.gmall.common.result.Result;
 import com.ajie.gmall.model.product.*;
-import com.ajie.gmall.product.mapper.BaseCategory1Mapper;
 import com.ajie.gmall.product.service.ManageService;
 import io.swagger.annotations.Api;
 import org.springframework.web.bind.annotation.*;
@@ -67,7 +66,7 @@ public class BaseManageController {
      * @param category3Id
      * @return
      */
-    @GetMapping("attrInfoList/{category1Id}/{category2Id}/{category3Id}")
+    @GetMapping("/attrInfoList/{category1Id}/{category2Id}/{category3Id}")
     public Result<List<BaseAttrInfo>> attrInfoList(@PathVariable("category1Id") Long category1Id,
                                                    @PathVariable("category2Id") Long category2Id,
                                                    @PathVariable("category3Id") Long category3Id) {
